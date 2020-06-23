@@ -7,6 +7,8 @@ const logger = require("morgan");
 
 const app = express();
 
+const PORT = process.env.PORT || 6312;
+
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
@@ -14,34 +16,14 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const databaseUrl = "fitnessTracker";
-const collections = ["fitness"];
 
-const db = mongojs(databaseUrl, collections);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/custommethods", { useNewUrlParser: true });
 
-db.on("error", error => {
-  console.log("Database Error:", error);
-});
 
-// app.get("/", (req, res) => {
-//   res.send(index.html);
-// });
-
-// app.get("/stats", (req, res) => {
-//   res.send(index.html);
-// });
-
-// app.get("/excercise?", (req, res) => {
-//   res.send(index.html);
-// });
-
-// app.get("/excercise", (req, res) => {
-//   res.send(index.html);
-// });
 
 
 
 // Listen on port 6312
-app.listen(6312, () => {
+app.listen(PORT, () => {
   console.log("🦄  App running on port 6312!");
 });
