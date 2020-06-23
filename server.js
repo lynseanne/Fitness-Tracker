@@ -1,7 +1,7 @@
 //server framework to build single/multi page web applications
 const express = require("express");
-//node module for mongodb that emulates the official mongodb API 
-const mongojs = require("mongojs");
+//node module for mongooose 
+const mongoose = require("mongoose");
 //node mod for error tracking 
 const logger = require("morgan");
 
@@ -11,6 +11,7 @@ const db = require("./models");
 
 const PORT = process.env.PORT || 6312;
 
+//logger/morgan must come before other app.use 
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
@@ -19,15 +20,39 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/custommethods", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-db.Workouts.create({ name: "New Workout" })
-  .then(dbWorkouts => {
-    console.log(dbWorkouts);
+app.get("/workouts", (req,res)=>{
+  db.Workouts.find({})
+  .then(dbWorkout => {
+    res.json(dbWorkout);
   })
-  .catch(({message}) => {
-    console.log(message);
+  .catch(err => {
+    res.json(err);
   });
+
+})
+
+
+
+
+
+// .then(({ _id }) => db.Workouts.findByIdAndDelete({}, { $push: { workout: _id } }, { new: true }))
+// .then(dbWorkout => {
+//   res.json(dbWorkout);
+// })
+// .catch(err => {
+//   res.json(err);
+// });
+// app.get("/workout", (req, res) => {
+//   db.Workouts.find({})
+//     .then(dbWorkout => {
+//       res.json(dbWorkout);
+//     })
+//     .catch(err => {
+//       res.json(err);
+//     });
+// });
 
 
 
