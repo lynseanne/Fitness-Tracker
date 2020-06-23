@@ -26,3 +26,13 @@ db.on("error", error => {
 app.get("/", (req, res) => {
   res.send(index.html);
 });
+
+
+
+
+
+
+// Listen on port 6312
+app.listen(6312, () => {
+  console.log("🦄  App running on port 6312!");
+});
