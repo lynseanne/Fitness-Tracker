@@ -23,12 +23,21 @@ db.on("error", error => {
   console.log("Database Error:", error);
 });
 
-app.get("/", (req, res) => {
-  res.send(index.html);
-});
+// app.get("/", (req, res) => {
+//   res.send(index.html);
+// });
 
+// app.get("/stats", (req, res) => {
+//   res.send(index.html);
+// });
 
+// app.get("/excercise?", (req, res) => {
+//   res.send(index.html);
+// });
 
+// app.get("/excercise", (req, res) => {
+//   res.send(index.html);
+// });
 
 
 
