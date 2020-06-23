@@ -7,6 +7,8 @@ const logger = require("morgan");
 
 const app = express();
 
+const db = require("./models");
+
 const PORT = process.env.PORT || 6312;
 
 app.use(logger("dev"));
@@ -19,7 +21,13 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/custommethods", { useNewUrlParser: true });
 
-
+db.Workouts.create({ name: "New Workout" })
+  .then(dbWorkouts => {
+    console.log(dbWorkouts);
+  })
+  .catch(({message}) => {
+    console.log(message);
+  });
 
 
 
