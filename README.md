@@ -59,7 +59,7 @@ Libraries
 
 npm Packages
 - [mongojs](https://www.npmjs.com/package/mongojs)
-- [logger](https://www.npmjs.com/package/logger)
+- [morgan logger](https://www.npmjs.com/package/morgan)
 - [express](https://www.npmjs.com/package/express)
 
 
