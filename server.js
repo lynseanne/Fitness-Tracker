@@ -19,21 +19,15 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+const URI = process.env.MONGODB_URI || "mongodb://localhost/workout"
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
-
-app.get("/exercise", (req,res)=>{
-  db.Workout.find({})
-  .then(dbWorkout => {
-    res.json(dbWorkout);
-  })
-  .catch(err => {
-    res.json(err);
-  });
+mongoose.connect(URI, {
+  useUnifiedTopology:true,
+  useNewURLParser:true,
+  useFindAndModify: false
 })
 
-
-app.get("/exercise?", (req,res)=>{
+app.get("/exercise", (req,res)=>{
   db.Workout.find({})
   .then(dbWorkout => {
     res.json(dbWorkout);
