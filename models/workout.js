@@ -12,7 +12,8 @@ const WorkoutSchema = new Schema({
   {weight:{ type: Number, min: 1}},
   {reps:{ type: Number, min: 1} },
  { sets:{ type: Number, min: 1}} ,
-  ]
+  ],
+  totalDuration:{type: Number}
   });
   
   const Workout = mongoose.model("Workout", WorkoutSchema);
