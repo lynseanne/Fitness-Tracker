@@ -14,7 +14,7 @@ The application is deployed on Heroku for the server to run and function properl
 
 
 
-![Fitness Tracker](public/assets/images/fitness.gif)
+![Fitness Tracker](public/assets/images/fitness.png)
 
 
 ## Table of Contents
@@ -76,7 +76,7 @@ Cloud Server
 <details>
     <summary markdown="span">Click to expand Screenshot Details</summary>
 
-![Category Page](public/assets/images/fitnees.gif)
+![Category Page](public/assets/images/fitnees.png)
 *Gif of Workout Home Page*
 
 </details>
