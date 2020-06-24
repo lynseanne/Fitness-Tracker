@@ -26,7 +26,7 @@ module.exports = function (app){
     });
   })
   
-  //display workout range
+  //display workout range for stats
   app.get("/api/workouts/range", (req,res)=>{
     db.Workout.find({})
     .then(dbWorkoutRange => {
@@ -39,12 +39,12 @@ module.exports = function (app){
 
  // Respond to a PUT request to the /api/workouts route
   app.put("/api/workouts/:id", (req,res)=>{
-    db.Workout.updateOne({_id: req.params.id},
-        { $push: { exercise: req.body }, $inc:{totalDuration: req.body.duration}}, 
-        (err,dbWorkoutUpdate)=>{
-        if (err) res.status(418).json(err)
-        res.json(dbWorkoutUpdate)
+    db.Workout.updateOne({_id: req.params.id}, {$push: {excercises: req.body}})
+    .then(dbWorkoutUpdate => {
+      res.json(dbWorkoutUpdate);
     })
-    
+    .catch(err => {
+      res.json(err);
+    });
   })
 }
