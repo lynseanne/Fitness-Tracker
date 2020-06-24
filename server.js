@@ -7,7 +7,6 @@ const logger = require("morgan");
 
 const app = express();
 
-const db = require("./models");
 
 const PORT = process.env.PORT || 6312;
 
@@ -19,13 +18,15 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const URI = process.env.MONGODB_URI || "mongodb://localhost/workout"
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-mongoose.connect(URI, {
-  useUnifiedTopology:true,
-  useNewURLParser:true,
-  useFindAndModify: false
-})
+// const URI = process.env.MONGODB_URI || "mongodb://localhost/workout"
+
+// mongoose.connect(URI, {
+//   useUnifiedTopology:true,
+//   useNewURLParser:true,
+//   useFindAndModify: false
+// })
 
 require("./controller/api-routes")(app)
 require("./controller/html-routes")(app)
