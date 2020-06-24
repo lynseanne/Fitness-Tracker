@@ -22,37 +22,55 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-app.get("/workouts", (req,res)=>{
-  db.Workouts.find({})
+app.get("/exercise", (req,res)=>{
+  db.Workout.find({})
   .then(dbWorkout => {
     res.json(dbWorkout);
   })
   .catch(err => {
     res.json(err);
   });
-
 })
 
 
+app.get("/exercise?", (req,res)=>{
+  db.Workout.find({})
+  .then(dbWorkout => {
+    res.json(dbWorkout);
+  })
+  .catch(err => {
+    res.json(err);
+  });
+})
 
+app.get("/api/workouts", (req,res)=>{
+  db.Workout.find({})
+  .then(dbWorkout => {
+    res.json(dbWorkout);
+  })
+  .catch(err => {
+    res.json(err);
+  });
+})
+app.post("/api/workouts", ({body},res)=>{
+  db.Workout.create({body})
+  .then(dbWorkout => {
+    res.json(dbWorkout);
+  })
+  .catch(err => {
+    res.json(err);
+  });
+})
 
-
-// .then(({ _id }) => db.Workouts.findByIdAndDelete({}, { $push: { workout: _id } }, { new: true }))
-// .then(dbWorkout => {
-//   res.json(dbWorkout);
-// })
-// .catch(err => {
-//   res.json(err);
-// });
-// app.get("/workout", (req, res) => {
-//   db.Workouts.find({})
-//     .then(dbWorkout => {
-//       res.json(dbWorkout);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
+app.get("/stats", (req,res)=>{
+  db.Workout.find({})
+  .then(dbWorkout => {
+    res.json(dbWorkout);
+  })
+  .catch(err => {
+    res.json(err);
+  });
+})
 
 
 
