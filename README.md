@@ -10,11 +10,11 @@ The application is deployed on Heroku for the server to run and function properl
 
 ## Deployment
 
-[Fitness Tracker Heroku Application](#blank)
+[Fitness Tracker Heroku Application](https://evening-river-77971.herokuapp.com/)
 
 
 
-![Fitness Tracker](public/assets/images/category.png)
+![Fitness Tracker](public/assets/images/fitness.gif)
 
 
 ## Table of Contents
@@ -58,7 +58,7 @@ Libraries
 - [Node.js](nodejs.org)
 
 npm Packages
-- [mongojs](https://www.npmjs.com/package/mongojs)
+- [mongoose](https://www.npmjs.com/package/mongoose)
 - [morgan logger](https://www.npmjs.com/package/morgan)
 - [express](https://www.npmjs.com/package/express)
 
@@ -76,17 +76,8 @@ Cloud Server
 <details>
     <summary markdown="span">Click to expand Screenshot Details</summary>
 
-![Category Page](public/assets/images/category.png)
-*Screenshot of Workout Home Page*
-
-![Sell Page](public/assets/images/sell.png)
-*Screenshot of*
-
-![Login Page](public/assets/images/login.png)
-*Screenshot of*
-
-![Signup Page](public/assets/images/signup.png)
-*Screenshot of*
+![Category Page](public/assets/images/fitnees.gif)
+*Gif of Workout Home Page*
 
 </details>
 
