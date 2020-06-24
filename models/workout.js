@@ -11,7 +11,7 @@ const WorkoutSchema = new Schema({
   {duration:{ type: Number, min: 5, required: "Enter minutes worked out" }},
   {weight:{ type: Number, min: 1}},
   {reps:{ type: Number, min: 1} },
- { sets:{ type: Number, min: 1}} ,
+  {sets:{ type: Number, min: 1}} ,
   ],
   totalDuration:{type: Number}
   });
