@@ -20,13 +20,7 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-// const URI = process.env.MONGODB_URI || "mongodb://localhost/workout"
 
-// mongoose.connect(URI, {
-//   useUnifiedTopology:true,
-//   useNewURLParser:true,
-//   useFindAndModify: false
-// })
 
 require("./controller/api-routes")(app)
 require("./controller/html-routes")(app)

@@ -39,8 +39,10 @@ module.exports = function (app){
 
  // Respond to a PUT request to the /api/workouts route
   app.put("/api/workouts/:id", (req,res)=>{
-    db.Workout.updateOne({_id: req.params.id}, {$push: {excercises: req.body}})
+    console.log(req.body)
+    db.Workout.findByIdAndUpdate(req.params.id, {$push: {exercises: req.body}})
     .then(dbWorkoutUpdate => {
+      console.log(dbWorkoutUpdate)
       res.json(dbWorkoutUpdate);
     })
     .catch(err => {
