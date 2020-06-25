@@ -79,8 +79,8 @@ Cloud Server
 ## Screenshots of Application
 <details>
     <summary markdown="span">Click to expand Screenshot Details</summary>
-
-![Category Page](public/assets/images/fitnees.png)
+ 
+![Fitness Tracker](https://media.giphy.com/media/dWOU4wecxwf9fPMJFr/giphy.gif)
 *Gif of Workout Home Page*
 
 </details>
