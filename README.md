@@ -14,7 +14,7 @@ The application is deployed on Heroku for the server to run and function properl
 
 
 
-![Fitness Tracker](public/assets/images/fitness.png)
+![Fitness Tracker](https://media.giphy.com/media/Ih12dHdRgrKYFsF4oY/giphy.gif)
 
 
 ## Table of Contents
@@ -30,6 +30,10 @@ To install, run following command in terminal:
   
 ```
 npm i
+
+npm i mongoose
+
+npm run seed
 ```
 
   ## Usage
