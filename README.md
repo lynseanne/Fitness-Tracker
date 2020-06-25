@@ -14,7 +14,7 @@ The application is deployed on Heroku for the server to run and function properl
 
 
 
-![Fitness Tracker](/assets/images/fitness.png)
+![Fitness Tracker](http://www.giphy.com/gifs/jrhb7HhtOFEnmhM5gD)
 
 
 ## Table of Contents
