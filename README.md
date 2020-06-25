@@ -30,6 +30,10 @@ To install, run following command in terminal:
   
 ```
 npm i
+
+npm i mongoose
+
+npm run seed
 ```
 
   ## Usage
